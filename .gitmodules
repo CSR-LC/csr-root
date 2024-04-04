@@ -2,3 +2,8 @@
 	path = csr-be
 	url = git@github.com:CSR-LC/csr-be.git
 	branch = master
+[submodule "frontend"]
+    path = csr-fe
+	url = git@github.com:CSR-LC/csr-fe.git
+	branch = develop
+
