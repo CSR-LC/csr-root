@@ -1,0 +1,4 @@
+[submodule "backend"]
+	path = csr-be
+	url = git@github.com:CSR-LC/csr-be.git
+	branch = master
