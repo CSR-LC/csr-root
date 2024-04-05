@@ -1,0 +1,8 @@
+[submodule "backend"]
+	path = csr-be
+	url = https://github.com/CSR-LC/csr-be.git
+	branch = master
+[submodule "frontend"]
+	path = csr-fe
+	url = https://github.com/CSR-LC/csr-fe.git
+	branch = develop
