@@ -51,8 +51,9 @@ In the future, you can use next command to update all repositories:
 ---
 # Start application
 
-Check file csr-be/config.json. It should contain:
+Check files . It should contain:
 
+csr-be/config.json
 ```json
   "db": {
     "host": "csr-db",
@@ -62,6 +63,21 @@ Check file csr-be/config.json. It should contain:
     "showSql": false
   },
 
+```
+csr-fe/src/environments/environment.ts
+```json
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:8080/api/',
+};
+```
+csr-fe/src/proxy.conf.json
+```json
+"/api/*": {
+      "target": "http://localhost:8080/api/",
+      "secure": true,
+      "changeOrigin": true,
+      "logLevel": "debug"
 ```
 
 Build images:
