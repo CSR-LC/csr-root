@@ -1,8 +1,8 @@
 version: "3"
 services:
-  postgres:
+  csr-db:
     image: "postgres:14-alpine"
-    container_name: db-local
+    container_name: csr-db
     environment:
       - POSTGRES_USER=csr
       - POSTGRES_DB=csr
@@ -18,26 +18,26 @@ services:
       timeout: 1s
       retries: 5
 
-  backend:
+  csr-be:
     image: csr-be
     build:
       context: csr-be/
       dockerfile: Dockerfile
     depends_on:
-      - postgres
+      - csr-db
     ports:
       - "8080:8080"
     networks:
       - csr_network
     command: "go run ./cmd/swagger/"
-  frontend:
+  csr-fe:
     image: csr-fe
     build:
 
       context: csr-fe/
       dockerfile: Dockerfile
     depends_on:
-      - postgres
+      - csr-db
     ports:
       - "8081:8080"
     networks:
