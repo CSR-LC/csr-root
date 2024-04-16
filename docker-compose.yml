@@ -1,6 +1,6 @@
 version: "3"
 services:
-  postgres:
+  csr-db:
     image: "postgres:14-alpine"
     container_name: db-local
     environment:
@@ -18,7 +18,7 @@ services:
       timeout: 1s
       retries: 5
 
-  backend:
+  csr-be:
     image: csr-be
     build:
       context: csr-be/
@@ -30,7 +30,7 @@ services:
     networks:
       - csr_network
     command: "go run ./cmd/swagger/"
-  frontend:
+  csr-fe:
     image: csr-fe
     build:
 
