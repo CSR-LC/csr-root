@@ -15,7 +15,7 @@ Clone repository:
 
 Initialise and update submodules:
 
-``git submodules update --init``
+``git submodule update --init``
 
 Now you have all repository updated and ready to work.
 
