@@ -8,6 +8,8 @@ services:
       - POSTGRES_DB=csr
       - POSTGRES_HOST_AUTH_METHOD=trust
     command: -p 5432
+    volumes:
+      - csr_db_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     networks:
@@ -42,6 +44,7 @@ services:
       - "8081:8080"
     networks:
       - csr_network
-
+volumes:
+  csr_db_data:
 networks:
   csr_network:
